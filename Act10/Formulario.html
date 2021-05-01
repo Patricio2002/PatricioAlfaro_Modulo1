@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="Formulario.php" method="POST">
+        <fieldset style="width:400px">
+            <legend>Formulario para entrar a la UNAM</legend>
+            <label>Nombre
+                <input type="text" name="nombre" required>
+            </label>
+            <br>
+            <br>
+            <label>Apellido Paterno
+                <input type="text" name="Paterno" required>
+            </label>
+            <br>
+            <br>
+            <label>Apellido Materno
+                <input type="text" name="Materno" required>
+            </label>
+            <br>
+            <br>
+            <label>Sexo
+                <select name="sexo" required>Sexo
+                    <option value="Hombre">Hombre</option>
+                    <option value="Mujer">Mujer</option>
+                </select>
+            </label>
+            <br>
+            <br>
+            <label>Edad
+                <input type="number" name="edad"  min="17" max="100" required>
+            </label>
+            <br>
+            <br>
+            <label>correo electrónico
+                <input type="email" name="correo" required>
+            </label>
+            <br>
+            <br>
+            <label>telefono
+                <input type ="number" name="telefono" required>
+            </label>
+            <br>
+            <br>
+            <label>celular
+                <input type ="number" name="cel" required>
+            </label>
+            <br>
+            <br>
+            <label>Escuela de Procedencia          
+                <select name="Escuela"required>
+                    <option value="">Ingrese una opción</option>
+                    <option value="Escuela Nacional Preparatoria">Escuela Nacional Preparatoria</option>
+                    <option value="CCH">Colegio de Ciencias y Humanidades</option>
+                    <option value="Bacho">Colegio de Bachilleres</option>
+                    <option value="conalep">CONALEP</option>
+                    <option value="cetis">CETIS</option>
+                </select>
+            </label>
+            <br>
+            <br>
+            <label>Promedio
+                <input type="number" name="prom" min="6" max="10" required>
+            </label>
+            <br>
+            <br>
+            <label>Primera opción
+                <input type="text" name="opUno" required>
+            </label>
+            <br>
+            <br>
+            <label>Segunda opción
+                <input type="text" name="opDos" required>
+            </label>
+            <br>
+            <label>
+                <input type="submit" name=enviar> 
+            </label>
+            <label>
+                <input type="reset" name=borrar value="borrar"> 
+            </label>
+        </fieldset>
+    </form>
+</body>
+</html>
