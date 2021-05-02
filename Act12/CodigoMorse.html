@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 12</title>
+</head>
+<body>
+    <form action="CodigoMorse.php" target="_blank" method="POST">
+        <fieldset style="width: 600px;">
+            <legend><h1>Codigo Morse</h1></legend>
+            <h2>Seleccione como desea traducir:</h2>
+            <br><br>
+            <label>
+                <select name="Morse" required>
+                    <option value="Esp">Del epañol al Morse</option>
+                    <option value="Mor">Del Morse al Español</option>
+                </select>
+            </label>
+            <h2>Inserte el texto:</h2>
+            <label>
+                <textarea name="Textito" cols="50" rows="10"></textarea>
+            </label>
+            <br>
+            <label>
+                <input type="submit" value="traducir">
+            </label>
+        </fieldset>
+    </form>
+</body>
+</html>
