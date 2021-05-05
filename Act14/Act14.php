@@ -123,103 +123,164 @@
             $dif3=0;
             $dif4=0;
             $dif5=0;
-            //si es despues del mes del cumple
-            if($dif1>0){
-                //se suman los dias meses que han pasado
-                for ($i=0; $i < $dif1; $i++) { 
-                    $dif2=$meses[$hoyUwU[1]+$i-1]+$dif2;
-                }
-                //diferencia entre días (sin considerar los meses) 
-                $dif3=$hoyUwU[2]-$cumpleUwU[2];
-                //si el numero de día de hoy es menor al del cumple
-                if($dif3<0) {
-                   $dif2=$dif2-$dif3; 
-                } 
-                 //si el numero de día de hoy es mayor al del cumple
-                else{
-                    $dif2=$dif2+$dif3; 
-                }
-                //se multiplica para horas
-                $dif4=$dif2*24;
-                //se multiplica para minutos
-                $dif5=$dif4*60;
-                if($w!=NULL)
-                    echo $dif2;
-                if($x!=NULL)
-                    echo $dif4;
-                if($y!=NULL)
-                    echo $dif5;
-            }
-            else{
-                //si es en el mismo mes
-                if($dif1==0){
-                    $dif3=$hoyUwU[2]-$cumpleUwU[2];
-                    //si no ha pasado
-                    if($dif3<=0){
-                        $dif3=$dif3*(-1);
-                        $dif4=$dif3*24;
-                        $dif5=$dif4*60;
-                        if($w!=NULL)
-                            echo $dif3;   
-                        if($x!=NULL)
-                            echo $dif4;
-                        if($y!=NULL)
-                            echo $dif5;   
-                    }
-                    //si ya pasó
-                    else{
-                        $dif3=365-$dif3;
-                        if($w!=NULL)
-                            echo $dif3;
-                    }  
-                }
-                // si cumple en un mes anterior al de fecha actual
-                else{
-                    $dif1=$dif1*-1;
-                    //se suman los meses que han pasado de su cumpleaños a la actualidad
+            $r=0;
+            echo "<table border=1>";
+                echo "<thead>";
+                    echo "<th>Cumpleaños</th>";
+                    echo "<th>$cumple</th>";
+                echo "</thead>";
+                //si es despues del mes del cumple
+                if($dif1>0){
+                    //se suman los dias meses que han pasado
                     for ($i=0; $i < $dif1; $i++) { 
-                        $dif2=$meses[$cumpleUwU[1]+$i]+$dif2;
+                        $dif2=$meses[$hoyUwU[1]+$i-1]+$dif2;
                     }
-                    //diferencia de numero de dia en mes
+                    //diferencia entre días (sin considerar los meses) 
                     $dif3=$hoyUwU[2]-$cumpleUwU[2];
+                    //si el numero de día de hoy es menor al del cumple
                     if($dif3<0) {
-                       $dif2=$dif2-$dif3; 
+                    $dif2=$dif2-$dif3; 
                     } 
+                    //si el numero de día de hoy es mayor al del cumple
                     else{
                         $dif2=$dif2+$dif3; 
                     }
-                    //se ajusta el valor para que sea en el proximo año
-                    $dif2=365-$dif2;
+                    //se multiplica para horas
                     $dif4=$dif2*24;
+                    //se multiplica para minutos
                     $dif5=$dif4*60;
-                    if($w!=NULL)
-                        echo $dif2;
-                     if($x!=NULL)
-                        echo $dif4;
-                    if($y!=NULL)
-                        echo $dif5;
-                }
-            }
-            //caclula si es fin de semana
-            //No sirve si es con un mes que ya pasó xd
-            if($z!=NULL){
-                $diaSemana=date("w");
-                if($dif1!=0){
-                    if($dif1>0)
-                        $semana=$dif2-$diaSemana-2;
-                    else{
-                        $semana=$dif2-$diaSemana+6;   
+                    if($w!=NULL){
+                        echo "<tr>";
+                            echo "<td>Día</td>";
+                            echo "<td>$dif2</td>";
+                        echo "</tr>";
+                    }
+                    if($x!=NULL){
+                        echo "<tr>";
+                            echo "<td>Hora</td>";
+                            echo "<td>$dif4</td>";
+                        echo "</tr>";
+                    }
+                    if($y!=NULL){
+                        echo "<tr>";
+                            echo "<td>Minutos</td>";
+                            echo "<td>$dif5</td>";
+                        echo "</tr>";
                     }
                 }
-                else
-                    $semana=$dif3-$diaSemana-3;
-                if($semana%7==0||$semana%7==6){
-                    echo "es fin de semana";
-                }
                 else{
-                    echo "No es fin de semana";
+                    //si es en el mismo mes
+                    if($dif1==0){
+                        $dif3=$hoyUwU[2]-$cumpleUwU[2];
+                        //si no ha pasado
+                        if($dif3<=0){
+                            $dif3=$dif3*(-1);
+                            $dif4=$dif3*24;
+                            $dif5=$dif4*60;
+                            if($w!=NULL){
+                                echo "<tr>";
+                                    echo "<td>Día</td>";
+                                    echo "<td>$dif3</td>";
+                                echo "</tr>";
+                            }   
+                            if($x!=NULL){
+                                echo "<tr>";
+                                    echo "<td>Hora</td>";
+                                    echo "<td>$dif4</td>";
+                                echo "</tr>";
+                            }
+                            if($y!=NULL){
+                                echo "<tr>";
+                                    echo "<td>Minutos</td>";
+                                    echo "<td>$dif5</td>";
+                                echo "</tr>";
+                            }  
+                        }
+                        //si ya pasó
+                        else{
+                            if($w!=NULL){
+                                echo "<tr>";
+                                    echo "<td>Día</td>";
+                                    echo "<td>$dif3</td>";
+                                echo "</tr>";
+                            }   
+                            if($x!=NULL){
+                                echo "<tr>";
+                                    echo "<td>Hora</td>";
+                                    echo "<td>$dif4</td>";
+                                echo "</tr>";
+                            }
+                            if($y!=NULL){
+                                echo "<tr>";
+                                    echo "<td>Minutos</td>";
+                                    echo "<td>$dif5</td>";
+                                echo "</tr>";
+                            }  
+                        }  
+                    }
+                    // si cumple en un mes anterior al de fecha actual
+                    else{
+                        $dif1=$dif1*-1;
+                        //se suman los meses que han pasado de su cumpleaños a la actualidad
+                        for ($i=0; $i < $dif1; $i++) { 
+                            $dif2=$meses[$cumpleUwU[1]+$i]+$dif2;
+                        }
+                        //diferencia de numero de dia en mes
+                        $dif3=$hoyUwU[2]-$cumpleUwU[2];
+                        if($dif3<0) {
+                        $dif2=$dif2-$dif3; 
+                        } 
+                        else{
+                            $dif2=$dif2+$dif3; 
+                        }
+                        //se ajusta el valor para que sea en el proximo año
+                        $dif2=365-$dif2;
+                        $dif4=$dif2*24;
+                        $dif5=$dif4*60;
+                        if($w!=NULL){
+                            echo "<tr>";
+                                echo "<td>Día</td>";
+                                echo "<td>$dif2</td>";
+                            echo "</tr>";
+                        }   
+                        if($x!=NULL){
+                            echo "<tr>";
+                                echo "<td>Hora</td>";
+                                echo "<td>$dif4</td>";
+                            echo "</tr>";
+                        }
+                        if($y!=NULL){
+                            echo "<tr>";
+                                echo "<td>Minutos</td>";
+                                echo "<td>$dif5</td>";
+                            echo "</tr>";
+                        }  
+                    }
                 }
-            }
+                //caclula si es fin de semana
+                if($z!=NULL){
+                    $diaSemana=date("w");
+                    if($dif1!=0){
+                        if($dif1>0)
+                            $semana=$dif2-$diaSemana-2;
+                        else{
+                            $semana=$dif2-$diaSemana+6;   
+                        }
+                    }
+                    else
+                        $semana=$dif3-$diaSemana-3;
+                    if($semana%7==0||$semana%7==6){
+                        $r="es fin de semana";
+                    }
+                    else{
+                        $r= "No es fin de semana";
+                    }
+                    echo "<tr>";
+                    echo "<td>Fin de semana</td>";
+                        echo "<td>$r</td>";
+                    echo "</tr>";
+                }
+                echo "</table>";
         }
     ?>
 </body>
