@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <td>
+            <fieldset style="width:400px">
+                <legend>Reloj Mundial</legend>
+                <table>
+                    <form action="Act14.php" method="POST">
+                        <tr>
+                           <label>
+                               <td colspan="2">Ingrese hora (CDMX) <input type="time" name="cdmx" required></td>
+                           </label>
+                        </tr>
+                        <tr>
+                            <td colspan="2"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Elige los países que quiere consultar</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>
+                                    Nueva York:<input type="checkbox" name="NY">
+                                </label>
+                            </td>
+                            <td>
+                                <label>
+                                    Sao Paulo:<input type="checkbox" name="SP">
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>
+                                    Madrid:<input type="checkbox" name="Madrid">
+                                </label>
+                            </td>
+                            <td>
+                                <label>
+                                    Paris:<input type="checkbox" name="Paris">
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>
+                                    Roma:<input type="checkbox" name="Roma">
+                                </label>
+                            </td>
+                            <td>
+                                <label>
+                                    Atenas:<input type="checkbox" name="Atenas">
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>
+                                    Beijing:<input type="checkbox" name="Beijing">
+                                </label>
+                            </td>
+                            <td>
+                                <label>
+                                    Tokio:<input type="checkbox" name="Tokio">
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="submit" name="verificar" value="verificar"> </td>
+                        </tr>
+                    </form>
+                </table>
+            </fieldset>
+        </td>
+        <td>
+            <fieldset style="width:400px">
+                <legend>Calcula cumpleaños</legend>
+                    <form action="Act14.php" method="POST">
+                        <table>
+                            <tr>
+                                <td colspan="2"></td>
+                                    <label>
+                                        Ingrese su fecha de nacimiento <input type="date" name=fecha required>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>¿Qué quieres consultar?</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>
+                                        Días para próximo cumpleaños <input type="checkbox" name="Dias">
+                                    </label>  
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>
+                                        Horas para próximo cumpleaños  <input type="checkbox" name="Horas">
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>
+                                        Minutos para próximo cumpleaños  <input type="checkbox" name="Minutos">
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>
+                                        ¿Será en fin de semana?  <input type="checkbox" name="Fin">
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="submit" name="calcular" value="calcular"> </td>
+                                
+                            </tr>
+                        </table>
+                    </form>
+            </fieldset>
+        </td>
+    </table>
+</body>
+</html>
